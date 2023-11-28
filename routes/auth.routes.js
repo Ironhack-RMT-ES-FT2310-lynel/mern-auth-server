@@ -91,7 +91,7 @@ router.post("/login", async (req, res, next) => {
     const payload = {
       _id: foundUser._id,
       email: foundUser.email,
-      // si tuvieramos roles, los agregamos tambien
+      // ! si tuvieramos roles, los agregamos tambien
     }
 
     const authToken = jwt.sign(payload, process.env.TOKEN_SECRET, { expiresIn: '2d' }) // 2 días como ejemplo
